@@ -1,0 +1,10 @@
+.home{
+    max-width: 1500px;
+  
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.005) 0%, rgba(253,187,45,1) 100%);
+}
+
+.row{
+    display: flex;
+}
