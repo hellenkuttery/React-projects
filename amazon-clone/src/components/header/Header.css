@@ -1,0 +1,13 @@
+.header{
+    display:flex;
+    background-color: black;
+    color:white;
+    justify-content: space-between;
+
+}
+
+.header__nav{
+    display:flex;
+    justify-content: space-around;
+    
+}
