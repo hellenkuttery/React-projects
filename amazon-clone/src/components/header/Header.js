@@ -12,7 +12,7 @@ const Header = () => {
         <div className="header__logoTitle">eShop</div>
         </div>
 
-        <div className="header__searchbar">
+        <div className="header__search">
         <input type="text" className="header__searchInput" />
         <SearchIcon fontSize="large"  className="header__searchIcon" />
         </div>
@@ -36,11 +36,11 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="nav__item">
+            <div className="nav__item itemBasket">
                 <div className="nav_itemLineOne">
-                <ShoppingBasketIcon fontSize="large"/>
+                <ShoppingBasketIcon fontSize="large" />
                 </div>
-                <div className="nav__itemLineTwo">
+                <div className="nav__itemLineTwo basketCount ">
                     0
                 </div>
             </div>
