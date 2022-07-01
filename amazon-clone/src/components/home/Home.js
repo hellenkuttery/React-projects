@@ -18,13 +18,28 @@ const Home = () => {
         <img src="https://trak.in/wp-content/uploads/2020/08/IMG_20200808_191750-1024x390.jpg" />
       </Carousel>
     <div className="row">
-    <Product/>
-    <Product/>
-    
+    <Product 
+    id="123659"
+    title=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit!"
+    price={456.00}
+    rating={5}
+    image="https://m.media-amazon.com/images/I/51DkPw6PDLL._AC_SL1500_.jpg"/>
+    <Product
+     id="123659"
+     title=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit!"
+     price={342.00}
+     rating={3}
+     image="https://5.imimg.com/data5/RC/FX/MY-4573598/customized-personal-care-products-500x500.jpg"/>
+  
+   
     </div>
   
     <div className="row">
-    <Product/>
+    <Product id="123659"
+     title=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, fugit!"
+     price={42.00}
+     rating={2}
+     image="https://corporate.oriflame.com/about-oriflame/product-philosophy/-/media/2E279B139BD74617958EDE0360D641FC.ashx"/> 
     <Product/>
     <Product/>
     

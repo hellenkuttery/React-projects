@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="header">
         <div className="header__logo">
-        <StorefrontIcon fontSize="large"sx={{ color: yellow[800] }}/>
+        <StorefrontIcon fontSize="large" sx={{ color: yellow[800] }}/>
         <div className="header__logoTitle">eShop</div>
         </div>
 

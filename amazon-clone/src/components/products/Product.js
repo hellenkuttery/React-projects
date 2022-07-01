@@ -6,23 +6,41 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./Product.css";
-import StarPurple500Icon from '@mui/icons-material/StarPurple500';export default function Product() {
+import StarPurple500Icon from "@mui/icons-material/StarPurple500";
+
+export default function Product({id,title,image,rating,price}) {
   return (
     <Card sx={{ maxWidth: 345 }} className="card">
       <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+        {title}
       </Typography>
-        <StarPurple500Icon className="star"/>
+
+
+      <div className="product__rating">
+                    {Array(rating)
+                    .fill()
+                    .map((_, i) => (
+                        <p>⭐</p>
+                    ))}
+                </div>
+
+      {/* <div>
+        {Array(rating).fill().map((_,i)=>{
+            <p>merhaba</p>
+            //    <StarPurple500Icon className="star" />
+        })}
+      </div>
+      <StarPurple500Icon className="star" /> */}
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
-        image="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1622666959-91cta5lgwsl-ac-uy695-1622666943.jpg?crop=1xw:0.9990867579908675xh;center,top&resize=480:*"
+        image={image}
       />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-          Lizard
+          <span>$</span>
+          {price}
         </Typography>
       </CardContent>
       <CardActions>
