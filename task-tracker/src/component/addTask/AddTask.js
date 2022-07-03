@@ -1,5 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import "./addTask.css"
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+
 
 const AddTask = ({ tasks, setTasks }) => {
   const [todo, setTodo] = useState("");
@@ -31,13 +36,13 @@ const addTask=(newTask)=>{
   };
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">Task:</label>
-        <input type="text" value={todo} onChange={(e) => handleTodoChange(e)} />
+      <form action="" onSubmit={handleSubmit} className="formStyle">
+        <Form.Label htmlFor="">Task:</Form.Label>
+        <Form.Control type="text" value={todo} onChange={(e) => handleTodoChange(e)} />
         <br />
-        <label htmlFor="">Date</label>
-        <input type="date" onChange={(e) => handleDayChange(e)} />
-        <button type="submit">SUBMIT</button>
+        <Form.Label htmlFor="">Date</Form.Label>
+        <Form.Control  type="date" onChange={(e) => handleDayChange(e)} />
+        <Button  type="submit" size="lg" className="submitButton">SUBMIT</Button>
       </form>
     </div>
   );

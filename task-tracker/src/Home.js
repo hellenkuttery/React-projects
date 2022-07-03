@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState} from "react"
-import Header from './component/Header'
-import ShowTask from './component/ShowTask'
+import Header from './component/header/Header'
+import ShowTask from './component/showTask/ShowTask'
+import "./Home.css"
 
 const Home = () => {
   const [tasks, setTasks] = useState(() => {
@@ -9,10 +10,10 @@ const Home = () => {
     return saved || [];
   });
   return (
-    <div>
+    <div className="container">
      <Header tasks={tasks} setTasks={setTasks} className="taskButton"/>
   
-     <ShowTask/>
+     <ShowTask tasks={tasks} setTasks={setTasks}/>
     </div>
   )
 }

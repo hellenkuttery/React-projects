@@ -1,0 +1,8 @@
+.formStyle{
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+}
+.submitButton{
+    margin:20px 0;
+}
