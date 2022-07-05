@@ -11,7 +11,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
 
-export default function ProductCard({product}) {
+export default function ProductCard({product,handleAddToCart}) {
 
 
 console.log(product)
@@ -43,7 +43,17 @@ console.log(product)
       <Typography variant="body2" color="text.secondary">
          {product.category}
         </Typography>
-        <IconButton aria-label="share">
+        <IconButton aria-label="share" 
+        onClick={()=>
+          handleAddToCart(
+            {
+              id:product.id,
+              title:product.title,
+              price:product.price,
+              image:product.image,
+            }, 1
+          )
+        }>
         <AddShoppingCartIcon/>
         </IconButton>
        

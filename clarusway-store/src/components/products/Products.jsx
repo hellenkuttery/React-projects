@@ -3,7 +3,7 @@ import CategoryBar from "../category/CategoryBar";
 import ProductCard from "./ProductsCard"
 import { CircularProgress, Container, Grid, Toolbar } from "@mui/material";
 
-const Products = ({ products, getProducts }) => {
+const Products = ({ products, getProducts, handleAddToCart}) => {
   return (
     <Container maxWidth="sm" sx={{mt:7}}>
       {/* <Toolbar/> */}
@@ -11,7 +11,7 @@ const Products = ({ products, getProducts }) => {
       <Grid container justifyContent="center" spacing={4}>
           {products.map((product) => (
             <Grid item key={product.id}>
-              <ProductCard product={product}  />
+              <ProductCard product={product} handleAddToCart={handleAddToCart}  />
             </Grid>
           ))}
         </Grid>

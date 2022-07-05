@@ -11,7 +11,8 @@ const Account = () => {
 
 
   return (
-    <div>
+    <div style={{marginTop:"100px"}}>
+      Account
       {/* Kart doluysa içindekileri boşsa boş olduğunu göster */}
     </div>
   )
