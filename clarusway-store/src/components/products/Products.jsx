@@ -5,7 +5,7 @@ import { CircularProgress, Container, Grid, Toolbar } from "@mui/material";
 
 const Products = ({ products, getProducts }) => {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" sx={{mt:7}}>
       {/* <Toolbar/> */}
       <CategoryBar getProducts={getProducts} />
       <Grid container justifyContent="center" spacing={4}>

@@ -26,11 +26,15 @@ function App() {
 
   return (
     <div>
-      {/* <Navbar/> */}
-      {/* <CategoryBar /> */}
-      <Products 
+      <Navbar/>
+
+
+      {showCard ? (""):(
+         <Products 
       products={products} 
       getProducts={getProducts} />
+      )}
+     
     </div>
   );
 }
