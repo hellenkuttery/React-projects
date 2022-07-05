@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function CaregoryBar() {
+export default function CaregoryBar( {getProducts}) {
   const [category, setCategories] = useState([]);
   const baseUrl = "https://fakestoreapi.com/products/categories";
 
@@ -30,6 +30,9 @@ export default function CaregoryBar() {
         row
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
+        onChange={(e) =>
+          getProducts(e.target.value && `/category/${e.target.value}`)
+        }
         // onCahnge ile kategoriyi alacağız
       >
 

@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import CategoryBar from "./components/category/CategoryBar";
 import Products from "../src/components/products/Products";
-import Account from "./components/account/Account"
+import Account from "./components/account/Account";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [account,setAccount]=useState([])
-  const [loading,setLoading]=useState(false)
+  const [account, setAccount] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [showCard, setShowCard] = useState(false);
   const baseUrl = "https://fakestoreapi.com/products";
 
@@ -17,17 +17,15 @@ function App() {
     getProducts();
   }, []);
 
-
   // Sepetime (hesabıma ) ürün ekleme işlemi
   const handleAddToCart = (product, quantity) => {
     // içindebu ürün varmı yok mu kontrolü
     const isAdded = account.some((item) => item.id === product.id);
     // Bu ürünün eklenmesi
     !isAdded && setAccount([...account, { ...product, quantity }]);
-  
-    console.log("product",product)
-  };
 
+    console.log("product", product);
+  };
 
   const getProducts = () => {
     axios
@@ -41,22 +39,20 @@ function App() {
 
   return (
     <div>
-      <Navbar
+      <Navbar 
       totalItems={account?.length}
-      />
-
+      setShowCard={setShowCard} />
 
       {showCard ? (
-        <Account
-        account={account}
+        <Account account={account} 
         />
-      ):(
-         <Products 
-      products={products} 
-      getProducts={getProducts} 
-      handleAddToCart={handleAddToCart}/>
+      ) : (
+        <Products
+          products={products}
+          getProducts={getProducts}
+          handleAddToCart={handleAddToCart}
+        />
       )}
-     
     </div>
   );
 }

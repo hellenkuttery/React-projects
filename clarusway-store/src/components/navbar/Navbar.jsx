@@ -11,21 +11,15 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 
 
-export default function MenuAppBar({totalItems}) {
+export default function MenuAppBar({totalItems,setShowCard}) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -51,6 +45,7 @@ export default function MenuAppBar({totalItems}) {
               edge="start"
               color="inherit"
               aria-label="menu"
+              onClick={() => setShowCard(false)}
               sx={{ mr: 2 }}
             >
               <img src={logo} height="25px" />
@@ -64,7 +59,7 @@ export default function MenuAppBar({totalItems}) {
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleMenu}
+                onClick={()=>setShowCard(true)}
                 color="inherit"
               >
                 <Badge badgeContent={totalItems} color="error">

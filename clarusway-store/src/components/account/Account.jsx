@@ -1,10 +1,33 @@
 import React from 'react'
+import {
+ 
+  Link,
 
-const Account = () => {
+} from "react-router-dom";
 
-    // Boş kart 
+const Account = (account) => {
+
+  const EmptyCard=()=>{
+    return(
+    <p>You have no items in your basket to add,
+         <Link
+          href="/"
+          sx={{
+            textDecoration: "none",
+          }}
+        >
+          start adding some!
+        </Link> </p>
+    )
+  }
     
+  const FilledCard=()=>{
+    return(
 
+      <p>Kartınızın içi dolu</p>
+    )
+  }
+    
 
     // Dolu kart için fonksiyon yaz
 
@@ -12,8 +35,10 @@ const Account = () => {
 
   return (
     <div style={{marginTop:"100px"}}>
-      Account
-      {/* Kart doluysa içindekileri boşsa boş olduğunu göster */}
+
+     {
+      account?.lenght ? <EmptyCard/> :<FilledCard/>
+     }
     </div>
   )
 }
