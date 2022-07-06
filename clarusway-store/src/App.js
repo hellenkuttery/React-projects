@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import CategoryBar from "./components/category/CategoryBar";
 import Products from "../src/components/products/Products";
-import Account from "./components/account/Account";
+import Basket from "./components/basket/Basket";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -23,15 +23,30 @@ function App() {
     const isAdded = account.some((item) => item.id === product.id);
     // Bu ürünün eklenmesi
     !isAdded && setAccount([...account, { ...product, quantity }]);
-
-    console.log("product", product);
   };
 
+
+  // Remove işleminde ürünlerin bu id ile eşleşmiyorsa alıyoruz eşleşenei almıyoruz
+const handleRemove=(productId)=>{
+const filterProducts=account.filter((item)=>item.id!==productId)
+setAccount(filterProducts)
+}
+
+const handleEmptyCart=()=>setAccount([])
+
+const handleUpdate=(productId,quantity)=>{
+if (quantity===0){
+  handleRemove(productId)
+}
+else {
+  const updateAccount=account.map((item)=> item.id===productId ? {...item,quantity} : item);
+  setAccount(updateAccount);
+}
+}
   const getProducts = () => {
     axios
       .get(baseUrl)
       .then((res) => {
-        console.log(res.data);
         setProducts(res.data);
       })
       .catch((e) => console.log(e));
@@ -44,8 +59,11 @@ function App() {
       setShowCard={setShowCard} />
 
       {showCard ? (
-        <Account account={account} 
-        />
+        <Basket 
+        account={account}
+        handleRemove={handleRemove}
+        handleEmptyCart={handleEmptyCart}
+        handleUpdate={handleUpdate}/>
       ) : (
         <Products
           products={products}

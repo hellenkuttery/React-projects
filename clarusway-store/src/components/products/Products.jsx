@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryBar from "../category/CategoryBar";
-import ProductCard from "./ProductsCard"
+import ProductCard from "./ProductCard"
 import { CircularProgress, Container, Grid, Toolbar } from "@mui/material";
 
 const Products = ({ products, getProducts, handleAddToCart}) => {
