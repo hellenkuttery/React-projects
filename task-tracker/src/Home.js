@@ -6,7 +6,7 @@ import "./Home.css"
 
 const Home = () => {
   const [tasks, setTasks] = useState(() => {
-    const saved = JSON.parse(localStorage.getItem("tasks"));
+    const saved = JSON.parse(localStorage.getItem("task"));
     return saved || [];
   });
   return (
