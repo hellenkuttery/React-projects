@@ -22,10 +22,10 @@ export default function Contacts({editHandler}) {
         <TableHead>
           <TableRow>
             <TableCell>Username</TableCell>
-            <TableCell align="right">Phone Number</TableCell>
-            <TableCell align="right">Gender</TableCell>
-            <TableCell align="right">Edit</TableCell>
-            <TableCell align="right">Delete</TableCell>
+            <TableCell align="left">Phone Number</TableCell>
+            <TableCell align="left">Gender</TableCell>
+            <TableCell align="left">Edit</TableCell>
+            <TableCell align="left">Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -45,8 +45,8 @@ export default function Contacts({editHandler}) {
               //  {/* Bilgiler geldiği zaman aşağıya yazılacak kodlar çalışsın */}
           contactList?.map((item,index)=>(
             <TableRow key={index}>
-            <TableCell textAlign="center">{item.username.toUpperCase()}  </TableCell>
-            <TableCell textAlign="center">{item.phoneNumber}</TableCell>
+            <TableCell textAlign="center" >{item.username.toUpperCase()}  </TableCell>
+            <TableCell textAlign="center"sx={{mr:"10"}} >{item.phoneNumber}</TableCell>
             <TableCell textAlign="center">{item.gender}</TableCell> 
             <TableCell textAlign="center" onClick={()=>editHandler(
               item.id, item.username,item.phoneNumber,item.gender
